@@ -228,3 +228,57 @@
     transform: rotate(0deg);
   }
 }
+
+/*My Styles*/
+
+.myContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+  background-color: lightpink;
+  padding: 20px;
+  margin: 10px;
+}
+
+
+.myTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  margin: -30px 50px 10px 50px;
+
+}
+
+.myBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dashed black;
+  width: 400px;
+  background-color: white;
+}
+
+.listUl {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listLi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+
+}
+
+.listButton {
+  margin-left: 10px;
+  background-color: white;
+  border: none;
+  color:red;
+}

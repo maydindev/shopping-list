@@ -1,8 +1,54 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [textInput, setTextInput] = useState("");
+  const [list, setList] = useState(["Elma"]);
+
+  const handleClickAdd = () => {
+    setList([...list, textInput]);
+    setTextInput("");
+  };
+
+  const handleChangeText = (e) => {
+    setTextInput(e.target.value);
+  };
+
+  const handleClickRemove = (index) => {
+    setList(list.filter((item, itemIndex) => itemIndex !== index));
+  };
+
   return (
+    <div className={styles.myContainer}>
+      <div className={styles.myTitle}>
+        <h1>Project 4: Alışveriş Listesi</h1>
+      </div>
+
+      <div className={styles.myBox}>
+        <h2>Alınacaklar</h2>
+        <span>
+          <input
+            type="text"
+            value={textInput}
+            placeholder="Yeni bir madde ekleyin"
+            onChange={handleChangeText}
+          />
+          <button onClick={handleClickAdd}>Add</button>
+          <ul className={styles.listUl}>
+            {list.map((item, index) => (
+              <li key={index} className={styles.listLi}>
+                {item}
+                <button className={styles.listButton} onClick={() => handleClickRemove(index)}><strong>X</strong></button>
+              </li>
+            ))}
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    /*
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -90,6 +136,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
+    </main>*/
   );
 }
